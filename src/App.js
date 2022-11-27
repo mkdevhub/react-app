@@ -3,7 +3,7 @@ import Layout from "./components/Layout/Layout";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import { useState } from "react";
 
@@ -16,18 +16,25 @@ function App() {
   const [cartQty, setCartQty] = useState(0);
   return (
     <div className="App">
-      <BrowserRouter>
-        <Header className="App-header" cartQty={cartQty} />
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Home changeQty={function (text) { setCartQty(text);}}/>}/>
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<NoPage />} />
-          </Routes>
-        </Layout>
-        <Footer className="App-footer" />
-      </BrowserRouter>
+      <Header className="App-header" cartQty={cartQty} />
+      <Layout>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Home
+                changeQty={function (text) {
+                  setCartQty(text);
+                }}
+              />
+            }
+          />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NoPage />} />
+        </Routes>
+      </Layout>
+      <Footer className="App-footer" />
     </div>
   );
 }
