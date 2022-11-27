@@ -11,7 +11,7 @@ function Header(props) {
     <div className="main-head">
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">
+          <a className="navbar-brand" href="./">
             <img src={logo} alt="Logo" />
           </a>
           <MainMenu menuList={menuData} />
