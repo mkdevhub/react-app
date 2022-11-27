@@ -20,7 +20,7 @@ function App() {
         <Header className="App-header" cartQty={cartQty} />
         <Layout>
           <Routes>
-            <Route index element={<Home changeQty={function (text) { setCartQty(text);}}/>}/>
+            <Route exact path="/" element={<Home changeQty={function (text) { setCartQty(text);}}/>}/>
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
             <Route path="*" element={<NoPage />} />
