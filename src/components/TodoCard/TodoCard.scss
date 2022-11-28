@@ -1,0 +1,28 @@
+.todo-list {
+  max-width: 650px;
+  margin: auto;
+}
+.list-items .list-group-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.list-items .btn-group {
+  margin-left: auto;
+}
+.list-items .btn-group span {
+  display: block;
+  padding: 3px 5px;
+  border: 1px solid #f1f1f1;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+form .form-control{
+    margin-bottom: 20px;
+}
+
+.form-check-input:checked ~ label {
+    text-decoration: line-through;
+    opacity: 0.8;
+}

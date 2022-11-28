@@ -9,6 +9,7 @@ import { useState } from "react";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Todo from "./pages/Todo";
 import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
 
@@ -29,7 +30,9 @@ function App() {
               />
             }
           />
+
           <Route path="about" element={<About />} />
+          <Route path="todo" element={<Todo />} />
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
