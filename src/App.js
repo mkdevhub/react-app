@@ -1,17 +1,13 @@
-import "./App.scss";
-import Layout from "./components/Layout/Layout";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-
 import { Routes, Route } from "react-router-dom";
-
 import { useState } from "react";
 
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Todo from "./pages/Todo";
-import Contact from "./pages/Contact";
-import NoPage from "./pages/NoPage";
+import "./App.scss";
+
+//Import components
+import { Layout, Header, Footer } from "./components";
+
+//Import pages
+import * as Page from "./pages";
 
 function App() {
   const [cartQty, setCartQty] = useState(0);
@@ -23,7 +19,7 @@ function App() {
           <Route
             path="/"
             element={
-              <Home
+              <Page.Home
                 changeQty={function (text) {
                   setCartQty(text);
                 }}
@@ -31,10 +27,10 @@ function App() {
             }
           />
 
-          <Route path="about" element={<About />} />
-          <Route path="todo" element={<Todo />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="*" element={<NoPage />} />
+          <Route path="about" element={<Page.About />} />
+          <Route path="todo" element={<Page.Todo />} />
+          <Route path="contact" element={<Page.Contact />} />
+          <Route path="*" element={<Page.NoPage />} />
         </Routes>
       </Layout>
       <Footer className="App-footer" />

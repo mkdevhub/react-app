@@ -1,17 +1,18 @@
 // Import Bootstrap and its default variables
-@import '~bootstrap/scss/bootstrap.scss';
+@import "~bootstrap/scss/bootstrap.scss";
 
-html,body,
+html,
+body,
 #root,
-.App{
-    height: 100%;
+.App {
+  height: 100%;
 }
 
-.App{
-    display: flex;
-    flex-direction: column;
+.App {
+  display: flex;
+  flex-direction: column;
 }
 
-.main{
-    flex: 1 0 auto;
+.main {
+  flex: 1 0 auto;
 }
