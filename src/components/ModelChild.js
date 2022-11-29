@@ -1,7 +1,7 @@
 function ModelChild(props) {
   return (
     <div className="modal-body">
-      <p>Child component text goes here.</p>
+      <p>Child component text goes here</p>
       <button
         onClick={function () {
           props.changeTitle("Title comes from child");
