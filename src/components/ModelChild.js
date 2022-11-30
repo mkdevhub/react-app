@@ -1,17 +1,12 @@
-function ModelChild(props) {
-  return (
-    <div className="modal-body">
-      <p>Child component text goes here</p>
-      <button
-        onClick={function () {
-          props.changeTitle("Title comes from child");
-        }}
-        type="button"
-        className="btn btn-sm btn-secondary"
-      >
-        Update title
-      </button>
-    </div>
-  );
-}
+//Arrow function + props destructuring in function signature - const { onType } = props;
+const ModelChild = ({ onType }) => (
+  <div className="modal-body">
+    <input
+      className="form-control"
+      type="text"
+      onChange={onType}
+      placeholder="Enter text to change parent heading"
+    />
+  </div>
+);
 export default ModelChild;

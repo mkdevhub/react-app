@@ -1,8 +1,30 @@
 import ModelChild from "./ModelChild";
 import { useState } from "react";
 
+const words = [
+  "spray",
+  "Limit",
+  "elite",
+  "Exuberant",
+  "destruction",
+  "present",
+];
+
 function ModelParent() {
   const [title, setTitle] = useState("Heading");
+
+  function handleType(event) {
+    setTitle(event.target.value);
+  }
+
+  const searchedWord = words.filter((word) =>
+    word.toLowerCase().includes(title.toLowerCase())
+  );
+
+  if(searchedWord.length > 0){
+    console.log(searchedWord);
+  }
+
   return (
     <div className="modal position-static d-block h-auto">
       <div className="modal-dialog mt-0">
@@ -10,13 +32,7 @@ function ModelParent() {
           <div className="modal-header">
             <h5 className="modal-title">Parent: {title}</h5>
           </div>
-          <ModelChild
-            changeTitle={function (text) {
-              // ChangeTitle trigger from child
-              // param: text comes from child
-              setTitle(text); //Callback function
-            }}
-          />
+          <ModelChild onType={handleType} />
         </div>
       </div>
     </div>

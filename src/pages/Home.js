@@ -3,8 +3,6 @@ import { useState } from "react";
 import ModelParent from "../components/ModelParent";
 import * as Media from "../components/Media";
 
-import Comp1 from "../class/Comp1";
-
 const Home = (props) => {
   let [qty, setQty] = useState(0);
 
