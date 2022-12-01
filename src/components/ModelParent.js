@@ -1,5 +1,5 @@
 import ModelChild from "./ModelChild";
-import { useState } from "react";
+import { useSemiPersistentState } from "../custom-hooks";
 
 const words = [
   "spray",
@@ -11,19 +11,18 @@ const words = [
 ];
 
 function ModelParent() {
-  const [title, setTitle] = useState("Heading");
-
+  const [title, setTitle] = useSemiPersistentState("title", "Heading");
   function handleType(event) {
     setTitle(event.target.value);
   }
 
-  const searchedWord = words.filter((word) =>
+ /*  const searchedWord = words.filter((word) =>
     word.toLowerCase().includes(title.toLowerCase())
   );
 
-  if(searchedWord.length > 0){
+  if (searchedWord.length > 0) {
     console.log(searchedWord);
-  }
+  } */
 
   return (
     <div className="modal position-static d-block h-auto">
